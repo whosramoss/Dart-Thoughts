@@ -1,4 +1,5 @@
 # Medium Projects
+All the apps created as an example used in my articles on Medium
 
 To run this project on your own, do the following: 
 1. Clone this project.
