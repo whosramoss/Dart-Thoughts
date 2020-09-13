@@ -1,4 +1,4 @@
-package com.example.textoveflowapp
+package com.example.textoveflow-app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class Singer {
   String name;
   String icon;
   String text;
   Singer({this.name, this.icon, this.text});
+}
+
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -68,7 +68,7 @@ class SingerList extends StatelessWidget {
   final BuildContext context;
   SingerList({this.context});
 
-  List<Singer> listSinger = [
+  final List<Singer> listSinger = [
     Singer(
       name: 'Jesse Rutherford',
       icon: 'https://www.radiorock.com.br/wp-content/uploads/2018/02/Jesse.jpg',
