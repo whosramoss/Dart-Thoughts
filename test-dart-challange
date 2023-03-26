@@ -1,0 +1,43 @@
+import 'dart:core';
+
+class Product {
+  String id, name;
+  List<String> slas;
+  Product({required this.id, required this.name, required this.slas});
+}
+
+void main() {
+  final lst = [
+    Product(id: "1234", name: "Camisa polo", slas: ["Entrega Agendada", "Entrega Correios"]),
+    Product(id: "567", name: "Calça jeans", slas: ["Entrega Correios", "Retirada em loja"]),
+    Product(id: "890", name: "Vestido", slas: ["Retirada em loja"]),
+  ];
+  final result = createNewMap(lst);
+  logs(result);
+}
+
+void logs(Map<String, dynamic> result) {
+  result.forEach((key, value) {
+    print('\n[SLA] = $key');
+    for (var productName in value) {
+      print('[Product Name] = $productName');
+    }
+  });
+}
+
+Map<String, dynamic> createNewMap(listProducts) {
+  final map = {};
+  // Create Map<"SLA", dynamic>
+  for (var product in listProducts) {
+    for (var i in product.slas) map[i] = [];
+  }
+  // Update Map<"SLA", List<"ProductNames">>
+  map.forEach((key, value) {
+    for (var product in listProducts) {
+      for (var nameSla in product.slas) {
+        if (nameSla == key) value.add(product.name);
+      }
+    }
+  });
+  return map;
+}
